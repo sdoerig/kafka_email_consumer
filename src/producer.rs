@@ -38,7 +38,7 @@ fn log_produce_result(
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (topic, config, email_config) = utils::get_config()?;
+    let (topic, config, _email_config) = utils::get_config()?;
     let producer: FutureProducer = config.create()?;
 
     let messages = (0..9)

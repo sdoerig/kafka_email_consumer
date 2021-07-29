@@ -29,7 +29,9 @@ const KAFKA_CONFIG_KEYS: &[&str; 5] = &[
     "sasl.password",
 ];
 
-pub fn get_config() -> Result<(String, ClientConfig, HashMap<String, String>), Box<dyn std::error::Error>> {
+type ConfigRes = Result<(String, ClientConfig, HashMap<String, String>), Box<dyn std::error::Error>>;
+
+pub fn get_config() -> ConfigRes {
     let matches = App::new("rust client example")
         .version(option_env!("CARGO_PKG_VERSION").unwrap_or(""))
         .arg(
