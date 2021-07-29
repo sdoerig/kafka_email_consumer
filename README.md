@@ -32,3 +32,10 @@ Just for testing
 # or 
 ./producer --config ~/your.config --topic your_kafka_topic
 ```
+### Build
+
+I had the problem zstd lib was not found when linking so I did
+```
+export RUSTFLAGS='-C link-args=-lzstd'
+cargo build
+```
