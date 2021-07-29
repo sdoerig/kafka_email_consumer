@@ -28,9 +28,15 @@ smpt_password=smpt_password
 Just for testing
 
 ```
-./consumer --config ~/your.config --topic your_kafka_topic
-# or 
 ./producer --config ~/your.config --topic your_kafka_topic
+```
+
+### Consumer 
+
+Sends an Email for each consumed message
+
+```
+./consumer --config ~/your.config --topic your_kafka_topic
 ```
 ### Build
 
