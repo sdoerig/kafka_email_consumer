@@ -1,0 +1,24 @@
+[package]
+name    = "rust-kafka-client-example"
+version = "0.1.0"
+authors = ["Stefan Dörig <sdoerig@bluewin.ch>"]
+edition = "2018"
+build   = "build.rs"
+
+[dependencies]
+futures = "0.3"
+tokio   = "0.1.21"
+clap    = "2.33.0"
+lettre = "0.10.0-rc.3"
+
+[dependencies.rdkafka]
+version     = "~0.21"
+features    = ["ssl", "sasl"]
+
+[[bin]]
+name = "producer"
+path = "src/producer.rs"
+
+[[bin]]
+name = "consumer"
+path = "src/consumer.rs"
